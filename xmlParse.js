@@ -15,6 +15,6 @@ $(document).ready(function(){
 	};
 
 	function showErr(){
-		alert('test');
+		$('ul').append('<li>'+'Parse Error'+'</li>');
 	}
 })
