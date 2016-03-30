@@ -5,7 +5,7 @@ $(document).ready(function(){
 		success:parseXML,
 		error:showErr
 	})
-
+	//On Success
 	function parseXML(data){
 		$(data).find('book').each(function(){
 			var name=$(this).find('title').text();
@@ -13,7 +13,7 @@ $(document).ready(function(){
 			$('ul').append('<li>'+name+' --> '+writer+'</li>')
 		});
 	};
-
+	//On Error
 	function showErr(){
 		$('ul').append('<li>'+'Parse Error, Try Again'+'</li>');
 	}
