@@ -29,6 +29,13 @@ quiz4.option.o1=["Tennis and cricket","Lacrosse","Judo","Rugby and Football"];
 quiz4.answer="Lacrosse";
 mcqQuiz.push(quiz4);
 
+var quiz5={};
+quiz5.question="When did the women get chance to take part in the Olympic Games?"
+quiz5.option={};
+quiz5.option.o1=["1896","1900","1908","1920"]
+quiz5.answer="1900";
+mcqQuiz.push(quiz5);
+
 $.each(mcqQuiz,function(qNo,quest){
 	var sNo=1+qNo;
 	$('ul').append('<li>'+sNo+'.'+quest.question+'</li>');
