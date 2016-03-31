@@ -1,0 +1,23 @@
+{
+	"country":[{
+			"Province":"Ontario",
+			"Capital":"Toronto"
+			},
+			{
+			"Province":"Nova Scotia",
+			"Capital":"Halifax"
+			},
+			{
+			"Province":"Saskatchewan",
+			"Capital":"Regina"
+			},
+			{
+			"Province":"Alberta",
+			"Capital":"Edmonton"
+			},
+			{
+			"Province":"Prince Edward Island",
+			"Capital":"Charlottetown"
+			}]
+	
+}

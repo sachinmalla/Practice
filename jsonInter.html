@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		$.ajax({
+			url:'http://localhost/files/test.json',
+			dataType:'json',
+			cache:false,
+			success:showData,
+			error:showErr
+		});
+		function showData(data){
+			$.each(data.country,function(index,value){
+			$('ul').append('<li>'+data.country[index].Capital+'</li>');		
+			});
+		};
+		function showErr(){
+			$('ul').append('<li>'+'Parse Error'+'</li>');
+		};
+	});
+	</script>
+	<title></title>
+</head>
+<body>
+<ul>
+</ul>
+</body>
+</html>
