@@ -12,8 +12,20 @@
 			error:showErr
 		});
 		function showData(data){
+			var jdata;
 			$.each(data.country,function(index,value){
-			$('ul').append('<li>'+data.country[index].Capital+'</li>');		
+			$('ul').append('<li>'+data.country[index].Capital+'</li>');
+			if (jdata==null){		
+			jdata={Capital:data.country[index].Capital};
+			localStorage.setItem('sData',JSON.stringify(jdata));
+			}
+			else
+			{
+			jdata=jdata+','+{Capital:data.country[index].Capital};
+			localStorage.setItem('sData',JSON.stringify(jdata));
+			}
+			
+			console.log(data.country[index].Capital);
 			});
 		};
 		function showErr(){
