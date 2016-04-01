@@ -13,19 +13,22 @@
 		});
 		function showData(data){
 			var jdata;
+			var mData=[];
 			$.each(data.country,function(index,value){
 			$('ul').append('<li>'+data.country[index].Capital+'</li>');
 			if (jdata==null){		
-			jdata={Capital:data.country[index].Capital};
-			localStorage.setItem('sData',JSON.stringify(jdata));
+			jdata={'Province':data.country[index].Province,'Capital':data.country[index].Capital};
 			}
 			else
 			{
-			jdata=jdata+','+{Capital:data.country[index].Capital};
-			localStorage.setItem('sData',JSON.stringify(jdata));
+				jdata={'Province':data.country[index].Province,'Capital':data.country[index].Capital};
 			}
-			
-			console.log(data.country[index].Capital);
+
+			localStorage.setItem('sData',JSON.stringify(jdata));
+			console.log(localStorage.getItem('sData'));
+			mData.push(localStorage.getItem('sData'))
+			localStorage.setItem('nn',JSON.stringify(mData));
+			//console.log(data.country[index].Capital);
 			});
 		};
 		function showErr(){
