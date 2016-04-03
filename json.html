@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<title></title>
+	<script>
+		$(document).ready(function(){
+			var chkData=localStorage.getItem('Capital');
+			if (chkData==null)
+			{
+			$.ajax({
+				url:'http://localhost/files/test.json',
+				dataType:'json',
+				success:showData,
+				error:showErr
+			});
+			function showData(data)
+			{
+				var jCap=JSON.stringify(data);
+				localStorage.setItem('Capital',jCap);
+				
+				console.log('Data Saved');
+				var getJson=localStorage.getItem('Capital');
+				var sJSON=$.parseJSON(getJson);
+				$.each(sJSON.country,function(no,prn){
+					$('ul').append('<li>'+prn.Province+' --> '+prn.Capital+'</li>')
+				})
+			}
+			function showErr()
+			{
+				$('ul').append('<li>'+'Error Pasring'+'</li>');
+			}
+		}
+		else
+		{
+			var x= localStorage.getItem('Capital');
+
+			var arr=$.parseJSON(x)
+			$.each(arr.country,function(idx,vals){
+			$('ul').append('<li>'+vals.Province+'</li>');
+			});
+			console.log('Data Retrive from Local');
+		}
+		})
+		
+	</script>
+</head>
+<body>
+<ul>
+	
+</ul>
+</body>
+</html>
