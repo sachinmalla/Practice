@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script>
+	$(document).ready(function(){
+		var quizOne=[];
+		var q1={};
+		q1.question="Carrot is orange in color because?";
+		q1.opt={};
+		q1.opt.choice=["It grows in the soil","It is not exposed to sunlight","It contains carotene","The entire plant is orange in color"];
+		q1.ans="It contains carotene";
+		quizOne.push(q1);
+
+		var q2={};
+		q2.question="The largest organ of human body is?";
+		q2.opt={};
+		q2.opt.choice=["Brain","Heart","Liver","Skin"];
+		q2.ans="Skin";
+		quizOne.push(q2);
+
+		var q3={};
+		q3.question="The function of hemoglobin is?";
+		q3.opt={};
+		q3.opt.choice=["Destruction of bacteria","To transport oxygen","Prevention of anemia","Utilization of energy"];
+		q3.ans="To transport oxygen";
+		quizOne.push(q3);
+
+		var q4={};
+		q4.question="The primary source of carbohydrates are";
+		q4.opt={};
+		q4.opt.choice=["marine animals","crude oil","plants","coal-far"];
+		q4.ans="coal-far";
+		quizOne.push(q4);
+		
+		var q5={};
+		q5.question="Which one of the following is not a true fish";
+		q5.opt={};
+		q5.opt.choice=["Eel","Sea-horse","Starfish","Shark"];
+		q5.ans="Starfish";
+		quizOne.push(q5);
+
+		var q6={};
+		q6.question="Which is the largest living bird";
+		q6.opt={};
+		q6.opt.choice=["Ostrich","Peacock","Dodo","Turkey"];
+		q6.ans="Ostrich";
+		quizOne.push(q6);
+
+		var q7={};
+		q7.question="The food which gives an athelete instant energy is";
+		q7.opt={};
+		q7.opt.choice=["Vitamin","Glucose","Protein","Butter"];
+		q7.ans="Glucose";
+		quizOne.push(q7);
+
+		var arrlen=quizOne.length;
+		var num=0;
+
+			$('#qizeQues').text(quizOne[num].question);
+			$.each(quizOne[num].opt.choice,function(chNo, Ch){
+				$('ul').append('<li>'+'<input type="radio" name="'+num+'optAns" + value="'+Ch+'"/>'+Ch+'</li>')
+			});
+	});
+	</script>
+	<style>
+		list-style-type: none;
+	</style>
+	<title></title>
+</head>
+<body>
+<div id="qizeQues">
+
+</div>
+
+<div id="option">
+<ul>
+</ul>
+</div>
+<hr/>
+
+<input type="button" name="btnPrev" id="btnPrev" value="Previous" />
+<input type="button" name="btnNext" id="btnNext" value="Next" />
+</body>
+</html>
