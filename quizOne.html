@@ -55,12 +55,19 @@
 		quizOne.push(q7);
 
 		var arrlen=quizOne.length;
-		var num=0;
+		//var num=0;
 
-			$('#qizeQues').text(quizOne[num].question);
-			$.each(quizOne[num].opt.choice,function(chNo, Ch){
-				$('ul').append('<li>'+'<input type="radio" name="'+num+'optAns" + value="'+Ch+'"/>'+Ch+'</li>')
+		function showQuiz(qNumber){
+			$('#qizeQues').text(quizOne[qNumber].question);
+			$.each(quizOne[qNumber].opt.choice,function(chNo, Ch){
+				$('ul').append('<li>'+'<input type="radio" name="'+qNumber+'optAns" + value="'+Ch+'"/>'+Ch+'</li>')
 			});
+		}
+		$('#btnNext').click();
+		$('#btnNext').click(function(){
+			var idx=0;
+			showQuiz(idx);
+		})
 	});
 	</script>
 	<style>
