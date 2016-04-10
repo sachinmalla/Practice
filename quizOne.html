@@ -54,19 +54,65 @@
 		q7.ans="Glucose";
 		quizOne.push(q7);
 
-		var arrlen=quizOne.length;
-		//var num=0;
-
+		var arrlen=quizOne.length-1;
+		
+		showQuiz(0);
 		function showQuiz(qNumber){
 			$('#qizeQues').text(quizOne[qNumber].question);
 			$.each(quizOne[qNumber].opt.choice,function(chNo, Ch){
-				$('ul').append('<li>'+'<input type="radio" name="'+qNumber+'optAns" + value="'+Ch+'"/>'+Ch+'</li>')
+				$('ul').append('<li>'+'<input type="radio" name="'+qNumber+'optAns" + value="'+Ch+'"/>'+Ch+'</li>');
 			});
+			$('input').addClass(''+ qNumber +'');
 		}
-		$('#btnNext').click();
+				
 		$('#btnNext').click(function(){
-			var idx=0;
-			showQuiz(idx);
+			
+			var curQZ = parseInt($('input').attr('class'),10);
+			var ans=[];
+			var selAns=	$('input:radio[name='+curQZ+'optAns]:checked').val();
+			var qAns=$(quizOne[curQZ].ans);
+			console.log(qAns);
+			ans[curQZ]=selAns;
+			console.log(selAns);
+			if ( qAns==selAns)
+			{
+				alert('Correct Answer');
+			}
+			else
+			{
+				alert('Wrong Answer');
+			}
+			$('ul').empty();
+
+			$('input').removeClass(''+ curQZ +'');
+			
+			if (curQZ==arrlen)
+			{
+				showQuiz(arrlen);
+			}
+			else
+			{
+				var nxtQZ = curQZ + 1;
+				showQuiz(nxtQZ);
+			}
+		});
+
+		$('#btnPrev').click(function(){
+			$('ul').empty();
+			var curQZ = parseInt($('input').attr('class'),10);
+			$('input').removeClass(''+ curQZ +'');		
+			if (curQZ == 0)
+			{
+				showQuiz(0);
+				alert('Begining of the Quiz');
+			}
+			else
+			{
+				var prvQZ = curQZ - 1;
+				showQuiz(prvQZ);
+				$('#btnNext').attr('value','Next');
+				
+			}
 		})
 	});
 	</script>
@@ -84,9 +130,12 @@
 <ul>
 </ul>
 </div>
+<div id="answer">
+
+</div>
 <hr/>
 
-<input type="button" name="btnPrev" id="btnPrev" value="Previous" />
-<input type="button" name="btnNext" id="btnNext" value="Next" />
+<input type="button" name="btnPrev"  id="btnPrev" value="Previous" />
+<input type="button" name="btnNext"  id="btnNext" value="Next" />
 </body>
 </html>
