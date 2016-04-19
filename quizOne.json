@@ -1,0 +1,46 @@
+{
+	"QuizOne":[
+		{
+		"question":"Carrot is orange in color because?",
+		"answerOpt":
+		["It grows in the soil","It is not exposed to sunlight","It contains carotene","The entire plant is orange in color"],
+		"answer":"It contains carotene"
+		},
+		{
+		"question":"The largest organ of human body is?",
+		"answerOpt":
+		["Brain","Heart","Liver","Skin"],
+		"answer":"Skin"
+		},
+		{
+		"question":"The function of hemoglobin is?",
+		"answerOpt":
+		["Destruction of bacteria","To transport oxygen","Prevention of anemia","Utilization of energy"],
+		"answer":"To transport oxygen"
+		},
+		{
+		"question":"The primary source of carbohydrates are",
+		"answerOpt":
+		["marine animals","crude oil","plants","coal-far"],
+		"answer":"coal-far"
+		},
+		{
+		"question":"Which one of the following is not a true fish",
+		"answerOpt":
+		["Eel","Sea-horse","Starfish","Shark"],
+		"answer":"Starfish"
+		},
+		{
+		"question":"Which is the largest living bird",
+		"answerOpt":
+		["Ostrich","Peacock","Dodo","Turkey"],
+		"answer":"Ostrich"
+		},
+		{
+		"question":"The food which gives an athelete instant energy is",
+		"answerOpt":
+		["Vitamin","Glucose","Protein","Butter"],
+		"answer":"Glucose"
+		}
+	]
+}
